@@ -41,7 +41,6 @@ async function runEcsTask({ ecs, cluster, serviceName, definedContainerName, com
     .runTask({
       cluster,
       taskDefinition: taskDefinition.taskDefinitionArn,
-      launchType: "EC2",
       overrides: {
         containerOverrides: [
           {
