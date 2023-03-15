@@ -41,12 +41,12 @@ async function runEcsTask({ ecs, cluster, serviceName, definedContainerName, com
     .runTask({
       cluster,
       taskDefinition: taskDefinition.taskDefinitionArn,
-      launchType: "FARGATE",
+      launchType: "EC2",
       overrides: {
         containerOverrides: [
           {
             name: containerName,
-            command: ["sh", "-c", command],
+            command: command,
           },
         ],
       },
